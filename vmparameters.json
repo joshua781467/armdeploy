@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "value": "appgwarm"
+        },
+        "adminPassword": {
+            "value": "aaa"
+        },
+        "dnsLabelPrefix": {
+            "value": "aaa"
+        },
+        "publicIpName": {
+            "value": "appgwarm"
+        },
+        "publicIPAllocationMethod": {
+            "value": "appgwarm"
+        },
+        "publicIpSku": {
+            "value": "appgwarm"
+        },
+        "OSVersion": {
+            "value": "appgwarm"
+        },
+        "vmSize": {
+            "value": "appgwarm"
+        },
+        "location": {
+            "value": "appgwarm"
+        },
+        "vmName": {
+            "value": "appgwarm"
+        }
+    }
+}
