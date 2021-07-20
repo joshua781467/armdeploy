@@ -1,0 +1,49 @@
+trigger:
+- master
+pool:
+  vmImage: 'ubuntu-latest'
+parameters:
+- name: subscriptionId,
+  type: string
+
+- name: resourceGroupName
+  type: string
+  
+
+- name: resourceGroupLocation
+  type: string
+  
+  
+
+- name: deploymentName,
+  type: string
+  
+
+- name: templateFilePath
+  type: string
+
+- name: parametersFilePath
+  type: string
+  
+  
+
+jobs:
+  - job: deploying_arm_through_ps
+    steps:
+      - task: PowerShell@2
+        env:
+          SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+
+        inputs:
+          filePath: './deploy.ps1'
+          arguments: 
+              -subscriptionId ${{parameters.subscriptionId}}
+              -resourceGroupName ${{parameters.resourceGroupName}}
+              -resourceGroupLocation ${{parameters.resourceGroupLocation}}
+              -deploymentName ${{parameters.deploymentName}}
+              -templateFilePath ${{parameters.templateFilePath}}
+              -parametersFilePath ${{parameters.parametersFilePath}}
+              
+              
+              
